@@ -1,0 +1,545 @@
+/* Définition des polices personnalisés */
+@font-face{
+	font-family: 'Roboto Condensed Bold';
+	src: url('fonts/RobotoCondensed-Bold.ttf') format('truetype');
+}
+@font-face{
+	font-family: 'Roboto Regular';
+	src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+body
+{
+	background-color: #333333; /*Couleur de fond si l'image ne charge pas*/
+	
+	background-image: url(images/fonds/cartographer.png); /*image de fond*/
+}
+header /*bloc contenant la banière, le menu et le randomtext*/
+{
+	overflow: hidden; /*cache le tracteur qui dépasse*/
+
+	/*hauteur et largeur du header*/
+	width: 1024px;
+	height: 175px;
+	
+	/*définition des marges*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+#baniere
+{
+	float: left; /*la banière sera à gauche du bloc*/
+
+	/*la hauteur et la largeur doivent être égales à celles de l'image de fond*/
+	width: 507px;
+	height: 186px;
+	
+	background-image: url(images/baniere.png); /*attribution d'une image au bloc*/
+}
+.randomText /*bloc de texte aléatoire*/
+{
+	position: relative; /*on place le bloc relativement au bloc conteneur.*/
+	left: 100px;
+	top: 140px;
+	
+	width: 500px;
+
+	white-space: nowrap; /*corrige un bug de placement*/
+
+	text-align: center; /*centre le texte*/
+
+	color: #888; /*couleur du texte*/
+
+	font-family: 'Roboto Condensed Bold'; /*affecte la police définie en première ligne*/
+
+}
+.randomText span
+{
+	display: none; /*cache les textes, un script jquery les affichant aléatoirement*/
+}
+#wrapper /*bloc qui contient tout le contenu*/
+{
+	margin-left: auto;
+	margin-right: auto;
+
+	width: 1024px;
+	
+	padding-bottom: 15px; /*marge "intérieure"*/
+
+	background-color: #DDDDDD; /*couleur du fond*/
+	box-shadow: 0px 0px 15px #000000; /*ombre d'un décallage de 0px, d'une taille de 15px et noir*/
+	border-radius: 10px; /*arrondir les contours*/
+	
+	background-image: url(images/fonds/old_moon.png); /*fond du bloc (qui se répète en mosaique)*/
+}
+section
+{
+	float: left; /*la section sera placée sur la gauche.*/
+	vertical-align: top; /*peu importe la taille du bloc parent, le bloc section restera collé en haut*/
+	
+	width: 729px;
+	
+	margin: 15px;
+	margin-top: 0px;
+}
+article
+{
+	background-color: #fff; /*fond blanc au lieu d'une image pour plus de lisibilité*/
+	color: #000000; /*couleur du texte*/
+	box-shadow: 0px 0px 5px #888888; /*ombre de 5px, grise*/
+	border-radius: 5px; /*arrondit les bords*/
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	margin-top : 15px;
+
+	font-family: 'Roboto Regular'; /*police d'écriture*/
+}
+article p /*paragraphes dans le bloc article*/
+{
+	margin-top: 0px;
+
+	text-align: justify;
+	font-size: 15px; /*taille de la police*/
+}
+article h1 /*titres principaux du bloc article*/
+{
+	font-size: 20px;
+}
+.article_oeuvre /*Classe qui englobe les petit bloc contenant les affiches et les descriptions des oeuvres.*/
+{
+	margin-top: 15px;
+	
+	height: 215px;
+	font-family: 'Roboto Regular';
+	font-size: 15px;
+	text-align: justify; /*Justifier le texte parce que même si on est ici pour rire, on peut faire un truc beau.*/
+}
+.article_oeuvre h1 /*Titre de l'article*/
+{
+	font-size: 22px; 
+}
+.article_oeuvre h2
+{
+	font-size: 16px;
+}
+.description_article
+{
+	float: right; /*Pour que la description soit sur la droite*/
+	position: relative; /*afin que la flèche déclarée si dessous soit bien placée*/
+
+	width: 525px;
+
+	background-color: #fff;
+	color: #000000;
+	box-shadow: 0px 0px 5px #888888; /*petite ombre pour faire jolie*/
+	border-radius: 5px; /*petits coin arrondis*/
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.description_article:after /*Création du petit triangle sur la gauche de la description*/
+{
+	content: ''; /*Créé un cadre vide*/
+	position: absolute; 
+	left: -30px;
+	top: 25px;
+	width: 0px;
+	height: 0px;
+	z-index: 50;
+	border-style: solid;
+	border-width: 20px 34.6px 20px 0;
+	border-color: transparent #fff transparent transparent;
+	-webkit-transform:rotate(360deg); /* faire une rotation de 360° */
+}
+.image_article
+{
+	float: left;
+}
+.image_article img
+{
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #000000;
+	border: none;
+}
+span.play
+{
+	background:url(images/play_icon.png) center center no-repeat #000; /* centrer le fond et ne pas le répeter (une seule image) */
+	height: 205px;
+	position: absolute;
+	width: 150px;
+	z-index: 10;	
+	-webkit-box-shadow: 0px 0px 4px #000; /* pour navigateur webkit (chrome, opera...) */
+	-moz-box-shadow: 0px 0px 4px  #000; /* pour firefox */
+	box-shadow: 0px 0px 4px  #000; /* ombrage du cadre */
+	border-radius: 5px;
+}
+span.voir_ba
+{
+	font-size: 14px;
+	color: white;
+	margin-left: 5px;
+	position: relative;
+	top: 160px;
+}
+.senscritique
+{
+	width: 22px;
+	height: 35px;
+	background-image: url(images/senscritique.png);
+	float: right;
+	margin-top: -10px;
+}
+.youtube
+{
+	width: 22px;
+	height: 35px;
+	background-image: url(images/youtube.png);
+	float: right;
+	margin-top: -10px;
+}
+.parties_oeuvres
+{
+	/*display: inline-block;*/
+	margin-top: 20px;
+	margin-left: -18px;
+	overflow: visible;
+}
+.parties_oeuvres_middle
+{
+	background-image: url(images/ribbon_title_middle.png);
+	background-repeat: repeat-x;
+	height: 48px;
+	min-width: 150px;
+	vertical-align: top;
+	display: inline-block;
+	margin-left: -5px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.parties_oeuvres h1
+{
+	font-family: 'Roboto Regular';
+	font-size: 30px;
+	margin-top: 2px;
+}
+.parties_oeuvres_after
+{
+	background-image: url(images/ribbon_title_right.png);
+	width: 25px;
+	height: 48px;
+	display: inline-block;
+	margin-left: -5px;
+}
+.parties_oeuvres_before
+{
+	background-image: url(images/ribbon_title_left.png);
+	width: 3px;
+	height: 48px;
+	display: inline-block;
+}
+aside
+{
+	float: right;
+	overflow: hidden;
+
+	width: 250px;
+	
+	margin: 15px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 5px #888888;
+	border-radius: 5px;
+
+	font-family: 'Roboto Regular';
+	font-size: 14px;
+}
+aside h3
+{
+	color: #DDDDDD;
+	text-align: left;
+	margin: 0;
+	padding-top: 4px;
+	padding-left: 15px;
+}
+.cadre_aside
+{
+	height: 35px;
+	background-color: #222222;
+	font-family: 'Roboto Condensed Bold';
+	font-size: 16px;
+}
+aside p
+{
+	text-align: justify;
+	padding: 10px;
+}
+aside img
+{
+	margin-left: 55px;
+	margin-top: 20px;
+}
+.pub img
+{
+	margin: 0px;
+	display: none;
+	margin-bottom: -5px;
+}
+.cadre_aside:after
+{
+	content: '';
+	position: relative;
+	left: 160px;
+	top: 20px;
+	width: 0;
+	height: 0;
+	border-left: 13px solid transparent;
+	border-right: 13px solid transparent;
+	border-top: 15px solid #222222;
+}
+/*Menu ruban*/
+
+.ribbon:after, .ribbon:before 
+{
+	margin-top:0.5em;
+	content: "";
+	float:left;
+	border:1.5em solid #ddd;
+}
+
+.ribbon:after 
+{
+	border-right-color:transparent;
+}
+
+.ribbon:before 
+{
+	border-left-color:transparent;
+}
+.ribbon a:link, .ribbon a:visited 
+{ 
+	color:#000;
+	text-decoration:none;
+	float:left;
+	height:3.5em;
+	overflow:hidden;
+}
+.ribbon span 
+{
+	background:#ddd;
+	display:inline-block;
+	line-height:3em;
+	padding:0 1em;
+	margin-top:0.5em;
+	position:relative;
+
+	-webkit-transition: background-color 0.2s, margin-top 0.2s;  /* Safari 3.2+, Chrome */
+	-moz-transition: background-color 0.2s, margin-top 0.2s;  /* FF4+ */
+	-ms-transition: background-color 0.2s, margin-top 0.2s;  /* IE10 */
+	-o-transition: background-color 0.2s, margin-top 0.2s;  /* Opera 10.5+ */
+	transition: background-color 0.2s, margin-top 0.2s;
+}
+
+.ribbon a:hover span 
+{
+	color: #FFF;
+	background:#f68736;
+	margin-top:0;
+	text-shadow: 2px 2px 1px #000;
+}
+
+.ribbon span:before 
+{
+	content: "";
+	position:absolute;
+	top:3em;
+	left:0;
+	border-right:0.5em solid #d1681b;
+	border-bottom:0.5em solid #ddd;
+}
+
+.ribbon span:after 
+{
+	content: "";
+	position:absolute;
+	top:3em;
+	right:0;
+	border-left:0.5em solid #d1681b;
+	border-bottom:0.5em solid #ddd;
+}
+.ribbon
+{
+	float:right;
+	
+	margin-right: 0px;
+	margin-top: 70px;
+
+	font-family: 'Roboto Condensed Bold';
+	text-shadow: 1px 1px 0px #bbb;
+}
+#newstwitter
+{
+	overflow: hidden;
+	margin-bottom: -5px;
+}
+.fiche_jeu
+{
+	float: left;
+	margin-left: 10px;
+}
+footer
+{
+	width:1024px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	text-align: center;
+
+	color: #aaa;
+	text-shadow: 3px 3px 5px #000;
+}
+
+/* =========================================================================================================================== */
+/* ======================================================== Slideshow ======================================================== */
+/* =========================================================================================================================== */
+
+/*Il faut mettre les marges et le padding à 0 pour toute la page afin que le slideshow fonctionne*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*Ici on gère le bloc du slideshow : sa taille, ses contours, son ombrage, ses marges etc...*/
+
+#slideshow-wrap {
+	display: block;
+	height: 320px;
+	min-width: 300px;
+	max-width: 710px;
+	margin: auto;
+	border: 12px rgba(255,255,255,1) solid;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+/*Pour enlever la bordure bleue/marron bien dégueulasse sous Internet Explorer*/
+#slideshow-wrap a img
+{
+	border: none;
+}
+
+/*Ceci concerne l'image à l'intérieur du slideshow seulement*/
+
+#slideshow-inner {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0,0,0);
+	overflow: hidden;
+	position: relative;
+}
+
+/*Ceci concerne le bloc entier où sont stockés les images, c'est ici qu'on définit les transitions*/
+
+#slideshow-inner>ul {
+	list-style: none;
+	height: 100%;
+	width: 500%;
+	/*Pour rajouter une image au slideshow, il faudra changer le width à 600%, à 400% pour en enlever une*/
+	overflow: hidden;
+	position: relative;
+	left: 0px;
+	-webkit-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+	-moz-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+	-o-transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+	transition: left .8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#slideshow-inner>ul>li {
+	width: 20%;
+	height: 320px;
+	float: left;
+	position: relative;
+}
+
+#slideshow-inner>ul>li>img {
+	margin: auto;
+	height: 100%;
+}
+
+#slideshow-wrap input[type=radio] {
+	position: absolute;
+	left: 50%;
+	bottom: 15px;
+	z-index: 100;
+	visibility: hidden;
+}
+
+/*Ici on pourra venir changer la couleur ainsi que la taille, l'emplacement et l'animation des ronds permettant la selection de l'image*/
+
+#slideshow-wrap label:not(.arrows):not(.show-description-label) {
+	position: absolute;
+	left: 50%;
+	bottom: 5px;
+	z-index: 100;
+	width: 12px;
+	height: 12px;
+	background-color: rgba(250,250,250,0.5);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+	box-shadow: 0px 0px 3px rgba(0,0,0,.8);
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	-o-transition: background-color .2s;
+	transition: background-color .2s;
+}
+
+/*Dans les 5 lignes ci dessous, on pourra venir changer la couleur des ronds quand ceux-ci sont séléctionnés*/
+
+#slideshow-wrap input[type=radio]#button-1:checked~label[for=button-1] { background-color: rgba(255,255,255,1) }
+
+#slideshow-wrap input[type=radio]#button-2:checked~label[for=button-2] { background-color: rgba(255,255,255,1) }
+
+#slideshow-wrap input[type=radio]#button-3:checked~label[for=button-3] { background-color: rgba(255,255,255,1) }
+
+#slideshow-wrap input[type=radio]#button-4:checked~label[for=button-4] { background-color: rgba(255,255,255,1) }
+
+#slideshow-wrap input[type=radio]#button-5:checked~label[for=button-5] { background-color: rgba(255,255,255,1) }
+
+/*Et ici leur emplacement par rapport à chacun*/
+
+#slideshow-wrap label[for=button-1] { margin-left: -36px }
+
+#slideshow-wrap label[for=button-2] { margin-left: -18px }
+
+#slideshow-wrap label[for=button-4] { margin-left: 18px }
+
+#slideshow-wrap label[for=button-5] { margin-left: 36px }
+
+#slideshow-wrap input[type=radio]#button-1:checked~#slideshow-inner>ul { left: 0 }
+
+#slideshow-wrap input[type=radio]#button-2:checked~#slideshow-inner>ul { left: -100% }
+
+#slideshow-wrap input[type=radio]#button-3:checked~#slideshow-inner>ul { left: -200% }
+
+#slideshow-wrap input[type=radio]#button-4:checked~#slideshow-inner>ul { left: -300% }
+
+#slideshow-wrap input[type=radio]#button-5:checked~#slideshow-inner>ul { left: -400% }
